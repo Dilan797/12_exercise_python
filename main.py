@@ -16,18 +16,24 @@ def guess(x):
         elif guess > random_number:
             print('Sorry guess agaiin, To high.')
     print(f'Yay, congrats. You have guessed the number {random_number} congratulation!!!')
+
 #Ahora crearemos el programa para que la maquina adivine el número que estamos pensando
 def computer_guess(x):
+    #Paramentro de los  limites de los núemros a a divinar 
     low = 1
     high = x
+    #Creamos un loop para que la maquina adivine el número
     feedback = ''
+    #Este ciclo se repite hasta que digitemos 'c'
     while feedback != 'c':
+        #Creamos la lógica para que la maquina adivine el número
         guess = random.randint(low, high)
-        feedback = input(f'Is {guess} too high(h), too low (L), or correct(C)??')
+        # Input
+        feedback = input(f'Is {guess} too high(h), too low (L), or correct(C)??: ')
+        #Logica con la que toma la lógica la maquina
         if feedback == 'h':
             high = guess -1 
         elif feedback == 'l':
             low = guess + 1
-    print(f' Yay! The computer guessed your number, {guess}, correctly')
-        
-computer_guess(1000)
+    print(f' Yay! The computer guessed your number, {guess}, correctly')        
+computer_guess(1000)    
